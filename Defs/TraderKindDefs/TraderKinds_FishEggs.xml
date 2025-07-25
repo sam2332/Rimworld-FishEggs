@@ -8,8 +8,8 @@
     <stockGenerators>
       <li Class="StockGenerator_Category">
         <categoryDef>FishEggs</categoryDef>
-        <thingDefCountRange>3-8</thingDefCountRange>
-        <countRange>5-15</countRange>
+        <thingDefCountRange>3~8</thingDefCountRange>
+        <countRange>5~15</countRange>
       </li>
     </stockGenerators>
   </TraderKindDef>

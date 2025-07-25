@@ -42,6 +42,13 @@ Ever looked at a perfectly good pond and thought, "This needs more fish"? Well, 
 ✅ VFE integration tested extensively  
 🤔 May cause spontaneous aquaculture addiction  
 
+## Recent Fixes
+
+### v1.0.1 - XML Format Fix
+- **Fixed:** TraderKinds XML parsing error with IntRange format  
+- **Issue:** Range values were using hyphens (`3-8`) instead of tildes (`3~8`)  
+- **Resolution:** Updated all IntRange values to use proper tilde format for RimWorld's parser
+
 ---
 
 *"Because sometimes the best solution to not having fish is just adding more fish."* 🐟

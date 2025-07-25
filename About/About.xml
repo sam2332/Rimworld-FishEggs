@@ -10,7 +10,25 @@
   <author>ProgrammerLily</author>
   
   <!-- Mod description -->
-  <description>Allow pawns to stock any water tile using right-clickable Fish Egg items that trigger a targeting cursor. Fish eggs are tied to specific fish and water types, and can be obtained through traders or by fishing. Seeding fish grants Animals XP and integrates with Vanilla Fishing Expanded.</description>="1.0" encoding="utf-8"?>
+<description>
+"Why wait for nature when you can play aquaculture god?"
+
+What Does This Do?
+
+Ever looked at a perfectly good pond and thought, "This needs more fish"? Well, now you can do something about it! This mod lets your colonists stock any water source with fish using... fish eggs!
+
+Features:
+
+- Right-click fish eggs, target water, stock fish
+- Works on any water tile
+- Fish type checking (no ocean salmon)
+- Supports Vanilla Fishing Expanded
+- Configurable via mod settings
+- Fish eggs appear in trader stock
+
+  ...and more!
+</description>
+
   
   <!-- Supported game versions -->
   <supportedVersions>
