@@ -130,23 +130,19 @@ namespace FishEggs
             
             // Set category after creation using a safe method
             var fishEggsCategory = DefDatabase<ThingCategoryDef>.GetNamedSilentFail("FishEggs");
+            var animalProductCategory = DefDatabase<ThingCategoryDef>.GetNamedSilentFail("AnimalProductRaw");
             if (fishEggsCategory != null)
             {
                 eggDef.thingCategories.Add(fishEggsCategory);
             }
-            else
+            if (animalProductCategory != null)
             {
-                // Fallback to parent category if FishEggs category isn't available
-                var animalProductCategory = DefDatabase<ThingCategoryDef>.GetNamedSilentFail("AnimalProductRaw");
-                if (animalProductCategory != null)
-                {
-                    eggDef.thingCategories.Add(animalProductCategory);
-                    Log.Warning($"[FishEggs] FishEggs category not found for {eggDef.defName}, using AnimalProductRaw as fallback");
-                }
-                else
-                {
-                    Log.Error($"[FishEggs] Neither FishEggs nor AnimalProductRaw category found for {eggDef.defName}, item may not appear in categories");
-                }
+                // Always add AnimalProductRaw as well, so eggs are storable anywhere animal products are accepted
+                eggDef.thingCategories.Add(animalProductCategory);
+            }
+            if (fishEggsCategory == null && animalProductCategory == null)
+            {
+                Log.Error($"[FishEggs] Neither FishEggs nor AnimalProductRaw category found for {eggDef.defName}, item may not appear in categories");
             }
             
             return eggDef;
