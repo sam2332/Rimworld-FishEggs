@@ -11,13 +11,19 @@ namespace FishEggs
     [StaticConstructorOnStartup]
     public static class FishEggDefGenerator
     {
+        private static HashSet<ushort> usedShortHashes = new HashSet<ushort>();
+        
         static FishEggDefGenerator()
         {
-            GenerateFishEggDefs();
+            // Delay generation to ensure all other mods have loaded their definitions
+            LongEventHandler.QueueLongEvent(GenerateFishEggDefs, "Generating fish egg definitions...", false, null);
         }
         
         private static void GenerateFishEggDefs()
         {
+            // Collect all existing short hashes to avoid collisions
+            CollectExistingShortHashes();
+            
             var fishDefs = FishEggUtility.GetAllFishDefs();
             var generatedCount = 0;
             
@@ -34,13 +40,37 @@ namespace FishEggs
             Log.Message($"[FishEggs] Generated {generatedCount} fish egg definitions");
         }
         
+        private static void CollectExistingShortHashes()
+        {
+            usedShortHashes.Clear();
+            
+            // Collect all existing ThingDef short hashes
+            foreach (var thingDef in DefDatabase<ThingDef>.AllDefs)
+            {
+                usedShortHashes.Add(thingDef.shortHash);
+            }
+            
+            Log.Message($"[FishEggs] Collected {usedShortHashes.Count} existing short hashes to avoid collisions");
+        }
+        
         private static ThingDef CreateFishEggDef(ThingDef fishDef)
         {
             var waterType = FishEggUtility.GetFishWaterType(fishDef);
             
+            // Use a simpler, more consistent defName format
+            // This provides better backward compatibility with save games
+            var eggDefName = $"FishEgg_{fishDef.defName}";
+            
+            // Check if this def already exists (shouldn't happen, but safety first)
+            if (DefDatabase<ThingDef>.GetNamedSilentFail(eggDefName) != null)
+            {
+                Log.Warning($"[FishEggs] Fish egg def {eggDefName} already exists, skipping generation for {fishDef.defName}");
+                return null;
+            }
+            
             var eggDef = new ThingDef
             {
-                defName = $"FishEgg_{fishDef.defName}",
+                defName = eggDefName,
                 label = $"{fishDef.label} egg",
                 description = $"An egg containing {fishDef.label} spawn. Can be used to seed {(waterType == WaterType.FreshWater ? "freshwater" : "saltwater")} sources.",
                 
@@ -61,6 +91,10 @@ namespace FishEggs
                     new StatModifier { stat = StatDefOf.Flammability, value = 0.5f },
                     new StatModifier { stat = StatDefOf.DeteriorationRate, value = 1f }
                 },
+                
+                // Add sound definitions to prevent null sound errors
+                soundInteract = SoundDefOf.Standard_Drop,
+                soundDrop = SoundDefOf.Standard_Drop,
                 
                 thingCategories = new List<ThingCategoryDef> { DefDatabase<ThingCategoryDef>.GetNamed("FishEggs") },
                 stackLimit = 10,
@@ -87,18 +121,41 @@ namespace FishEggs
                 }
             };
             
-            // Generate unique short hash for the def
-            eggDef.shortHash = 0;
-            eggDef.shortHash = GiveShortHash(eggDef, typeof(ThingDef));
+            // Generate a unique short hash that doesn't collide with existing definitions
+            eggDef.shortHash = GenerateUniqueShortHash(eggDef.defName);
             
             return eggDef;
         }
         
-        // Helper method to generate short hash (adapted from RimWorld's method)
-        private static ushort GiveShortHash(Def def, System.Type defType)
+        private static ushort GenerateUniqueShortHash(string defName)
         {
-            var hashCode = (def.defName + defType.ToString()).GetHashCode();
-            return (ushort)(hashCode & 0xFFFF);
+            // Start with a hash based on the defName
+            var baseHash = (ushort)(defName.GetHashCode() & 0xFFFF);
+            var hash = baseHash;
+            var attempts = 0;
+            
+            // If there's a collision, increment until we find a free hash
+            while (usedShortHashes.Contains(hash) && attempts < 65536)
+            {
+                hash = (ushort)((hash + 1) & 0xFFFF);
+                attempts++;
+            }
+            
+            if (attempts >= 65536)
+            {
+                Log.Error($"[FishEggs] Could not generate unique short hash for {defName} after 65536 attempts!");
+                return baseHash; // Fall back to base hash even if it collides
+            }
+            
+            // Reserve this hash
+            usedShortHashes.Add(hash);
+            
+            if (attempts > 0)
+            {
+                Log.Message($"[FishEggs] Generated unique short hash {hash} for {defName} (after {attempts} collision resolution attempts)");
+            }
+            
+            return hash;
         }
     }
 }

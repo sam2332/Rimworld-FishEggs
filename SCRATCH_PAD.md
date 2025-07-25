@@ -100,3 +100,38 @@
 - **Solution:** Set job.count = 1 when creating SeedWaterSource jobs  
 - **File:** Source/ThingWithComps_FishEgg.cs
 - **Key Insight:** All RimWorld jobs that handle items MUST have a valid positive count for hauling to work
+
+## Hash Collision Fix Applied:
+
+### 3. Short Hash Collision Issue
+- **Problem:** FishEggDefGenerator was manually generating short hashes using simple hash function, causing collisions with existing game definitions (Hash collision warnings in console)
+- **Root Cause:** Manual short hash generation `(defName + type).GetHashCode() & 0xFFFF` doesn't check for existing hashes
+- **Solution:**
+  1. Removed manual `GiveShortHash()` method
+  2. Let RimWorld's DefDatabase automatically assign unique short hashes
+  3. Made defNames more unique by including original fish's shortHash: `FishEgg_{fishDefName}_{fishShortHash}`
+  4. Added delayed generation using `LongEventHandler.QueueLongEvent()` to ensure all mods load first
+  5. Added safety check for existing definitions
+- **Files:** Source/FishEggDefGenerator.cs
+- **Key Insight:** Never manually assign short hashes - let RimWorld handle collision detection automatically
+
+## Updated Hash Collision Fix Applied:
+
+### 4. Comprehensive Short Hash Collision Resolution 
+- **Problem:** Still getting hash collisions like `FishEgg_VCEF_RawAngelfish_4030 and FishEgg_Fish_Salmon_46640: both have short hash 0`
+- **Root Cause:** RimWorld's automatic hash assignment during late loading wasn't working properly
+- **New Solution:**
+  1. **Explicit Hash Collection**: Collect all existing short hashes before generation
+  2. **Collision-Free Generation**: Generate unique hashes by incrementing until finding free hash
+  3. **Hash Reservation**: Track used hashes to prevent future collisions
+  4. **Backward Compatibility**: Simplified defName format back to `FishEgg_{fishDefName}` for save compatibility
+  5. **Better Logging**: Added collision resolution attempt logging
+- **Files:** Source/FishEggDefGenerator.cs
+- **Key Insight:** When dynamically generating defs, manually manage short hashes with collision detection
+
+### 5. Missing VFE Fish Definition Issue
+- **Problem:** `Could not load reference to Verse.ThingDef named FishEgg_VCEF_RawHalibut`
+- **Root Cause:** VanillaTradingExpanded save data references fish egg that may not be generated
+- **Investigation:** `VCEF_RawHalibut` exists in VFE (confirmed in XML files)
+- **Likely Issue:** Fish discovery or generation timing problem
+- **Files Checked:** VFE 1.6Odyssey definitions confirmed halibut exists
