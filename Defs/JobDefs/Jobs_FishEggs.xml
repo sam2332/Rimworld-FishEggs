@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <JobDef>
+    <defName>SeedWaterSource</defName>
+    <driverClass>FishEggs.JobDriver_SeedWaterSource</driverClass>
+    <reportString>seeding water with fish egg.</reportString>
+    <joyDuration>4000</joyDuration>
+    <joyMaxParticipants>1</joyMaxParticipants>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+</Defs>

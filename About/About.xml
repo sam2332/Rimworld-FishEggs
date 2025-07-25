@@ -1,0 +1,32 @@
+
+<ModMetaData>
+  <!-- Unique identifier for your mod - change this to something unique -->
+  <packageId>FishEggs.ProgrammerLily.com</packageId>
+  
+  <!-- Display name of your mod -->
+  <name>Universal Pond Stocking + Fish Egg Seeding</name>
+  
+  <!-- Author information -->
+  <author>ProgrammerLily</author>
+  
+  <!-- Mod description -->
+  <description>Allow pawns to stock any water tile using right-clickable Fish Egg items that trigger a targeting cursor. Fish eggs are tied to specific fish and water types, and can be obtained through traders or by fishing. Seeding fish grants Animals XP and integrates with Vanilla Fishing Expanded.</description>="1.0" encoding="utf-8"?>
+  
+  <!-- Supported game versions -->
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  
+  <!-- URL to your mod's page or repository (optional) -->
+  <url>https://github.com/ProgrammerLily/FishEggs</url>
+  
+  <!-- Load order dependencies (optional) -->
+  <forceLoadAfter>
+    <li>Ludeon.RimWorld</li>
+    <li>Ludeon.Odyssey</li>
+    <li>VanillaExpanded.VFE.Fishing</li>
+  </forceLoadAfter>
+
+  <modVersion>1.0.0</modVersion>
+  
+</ModMetaData>

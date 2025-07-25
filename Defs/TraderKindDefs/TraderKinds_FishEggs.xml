@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Add fish eggs to bulk goods trader -->
+  <TraderKindDef>
+    <defName>FishEggs_BulkGoods</defName>
+    <label>bulk goods trader (with fish eggs)</label>
+    <commonality>1</commonality>
+    <stockGenerators>
+      <li Class="StockGenerator_Category">
+        <categoryDef>FishEggs</categoryDef>
+        <thingDefCountRange>3-8</thingDefCountRange>
+        <countRange>5-15</countRange>
+      </li>
+    </stockGenerators>
+  </TraderKindDef>
+</Defs>
