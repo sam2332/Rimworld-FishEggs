@@ -97,8 +97,9 @@ namespace FishEggs
                     new StatModifier { stat = StatDefOf.DeteriorationRate, value = 1f }
                 },
                 
-                // Let the game use default sounds to avoid any sound errors
-                
+                soundDrop = SoundDefOf.Standard_Drop,
+                soundPickup = SoundDefOf.Standard_Pickup,
+                soundInteract = SoundDefOf.Interact_Sow,
                 thingCategories = new List<ThingCategoryDef>(),
                 stackLimit = 10,
                 drawGUIOverlay = true,

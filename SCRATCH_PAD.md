@@ -135,3 +135,16 @@
 - **Investigation:** `VCEF_RawHalibut` exists in VFE (confirmed in XML files)
 - **Likely Issue:** Fish discovery or generation timing problem
 - **Files Checked:** VFE 1.6Odyssey definitions confirmed halibut exists
+
+### 6. Sound References Fix
+- **Problem:** `Tried to PlayOneShot with null SoundDef` errors during hauling/carry operations
+- **Root Cause:** FishEggDefGenerator was setting invalid sound properties:
+  - `soundImpactDefault = SoundDefOf.Standard_Impact` (doesn't exist)
+  - `soundPlayInstrument = SoundDefOf.Standard_PlayInstrument` (doesn't exist)  
+  - `soundSpawned = SoundDefOf.Standard_Spawned` (doesn't exist)
+  - `soundInteract = SoundDefOf.Standard_Interact` (doesn't exist)
+- **Solution:** Removed all invalid sound references, kept only valid ones:
+  - `soundDrop = SoundDefOf.Standard_Drop` ✅ (confirmed exists)
+  - Removed the rest to prevent null sound errors
+- **Files:** Source/FishEggDefGenerator.cs
+- **Key Insight:** Always verify SoundDef exists in SoundDefOf before assigning, null sounds cause crashes during game operations
