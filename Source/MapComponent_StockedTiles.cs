@@ -23,7 +23,7 @@ namespace FishEggs
         public void MarkTileStocked(IntVec3 cell, ThingDef fishDef)
         {
             stockedTiles[cell] = fishDef;
-            
+
             // Add fish to vanilla water body system using reflection
             var waterBody = map.waterBodyTracker?.WaterBodyAt(cell);
             if (waterBody != null)
@@ -41,10 +41,21 @@ namespace FishEggs
                             Log.Message($"[FishEggs] Added {fishDef.label} to water body at {cell}");
                         }
                     }
+
+                    // Increase population field using reflection
+                    var populationField = typeof(WaterBody).GetField("population", BindingFlags.NonPublic | BindingFlags.Instance);
+                    if (populationField != null)
+                    {
+                        float currentPop = (float)populationField.GetValue(waterBody);
+                        // Increase by a fixed amount per stocking (tune as needed)
+                        float addAmount = 50f;
+                        populationField.SetValue(waterBody, currentPop + addAmount);
+                        Log.Message($"[FishEggs] Increased fish population by {addAmount} at {cell} (now {currentPop + addAmount})");
+                    }
                 }
                 catch (System.Exception ex)
                 {
-                    Log.Warning($"[FishEggs] Could not add fish to water body via reflection: {ex.Message}");
+                    Log.Warning($"[FishEggs] Could not add fish to water body or increase population via reflection: {ex.Message}");
                 }
             }
         }

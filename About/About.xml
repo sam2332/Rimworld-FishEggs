@@ -4,7 +4,7 @@
   <packageId>FishEggs.ProgrammerLily.com</packageId>
   
   <!-- Display name of your mod -->
-  <name>Universal Pond Stocking + Fish Egg Seeding</name>
+  <name>[PL] Fish Eggs and Pond Stocking</name>
   
   <!-- Author information -->
   <author>ProgrammerLily</author>
@@ -36,15 +36,27 @@ Features:
   </supportedVersions>
   
   <!-- URL to your mod's page or repository (optional) -->
-  <url>https://github.com/ProgrammerLily/FishEggs</url>
-  
+  <url>https://github.com/sam2332/Rimworld-FishEggs</url>
+
+
   <!-- Load order dependencies (optional) -->
   <forceLoadAfter>
-    <li>Ludeon.RimWorld</li>
-    <li>Ludeon.Odyssey</li>
-    <li>VanillaExpanded.VFE.Fishing</li>
+    <li>ludeon.rimWorld</li>
+    <li>ludeon.rimworld.odyssey</li>
+    <li>vanillaexpanded.vcef</li>
+    <li>vanillaexpanded.vcefaddon</li>    
   </forceLoadAfter>
-
-  <modVersion>1.0.0</modVersion>
+  <modDependencies>
+      <li>
+          <packageId>ludeon.rimworld</packageId>
+          <displayName>Core</displayName>
+      </li>
+      <li>
+          <packageId>ludeon.rimworld.odyssey</packageId>
+          <displayName>Odyssey</displayName>
+      </li>
+      
+  </modDependencies>
+  <modVersion>0.1.0</modVersion>
   
 </ModMetaData>
