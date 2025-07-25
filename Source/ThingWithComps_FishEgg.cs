@@ -22,7 +22,7 @@ namespace FishEggs
             // Add seeding option if enabled
             if (FishEggsMod.Settings.enableContextMenuSeeding && LinkedFishDef != null)
             {
-                yield return new FloatMenuOption("Seed Water Source", () =>
+                yield return new FloatMenuOption("Seed Water Source " + LinkedFishDef.label + " egg", () =>
                 {
                     Find.Targeter.BeginTargeting(
                         TargetingParameters.ForCell(), 

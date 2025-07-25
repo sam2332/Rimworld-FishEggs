@@ -97,11 +97,9 @@ namespace FishEggs
                     new StatModifier { stat = StatDefOf.DeteriorationRate, value = 1f }
                 },
                 
-                // Add sound definitions to prevent null sound errors
-                soundInteract = SoundDefOf.Standard_Drop,
-                soundDrop = SoundDefOf.Standard_Drop,
+                // Let the game use default sounds to avoid any sound errors
                 
-                thingCategories = new List<ThingCategoryDef> { DefDatabase<ThingCategoryDef>.GetNamed("FishEggs") },
+                thingCategories = new List<ThingCategoryDef>(),
                 stackLimit = 10,
                 drawGUIOverlay = true,
                 alwaysHaulable = true,
@@ -128,6 +126,27 @@ namespace FishEggs
             
             // Generate a unique short hash that doesn't collide with existing definitions
             eggDef.shortHash = GenerateUniqueShortHash(eggDef.defName);
+            
+            // Set category after creation using a safe method
+            var fishEggsCategory = DefDatabase<ThingCategoryDef>.GetNamedSilentFail("FishEggs");
+            if (fishEggsCategory != null)
+            {
+                eggDef.thingCategories.Add(fishEggsCategory);
+            }
+            else
+            {
+                // Fallback to parent category if FishEggs category isn't available
+                var animalProductCategory = DefDatabase<ThingCategoryDef>.GetNamedSilentFail("AnimalProductRaw");
+                if (animalProductCategory != null)
+                {
+                    eggDef.thingCategories.Add(animalProductCategory);
+                    Log.Warning($"[FishEggs] FishEggs category not found for {eggDef.defName}, using AnimalProductRaw as fallback");
+                }
+                else
+                {
+                    Log.Error($"[FishEggs] Neither FishEggs nor AnimalProductRaw category found for {eggDef.defName}, item may not appear in categories");
+                }
+            }
             
             return eggDef;
         }
