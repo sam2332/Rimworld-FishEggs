@@ -76,11 +76,16 @@ namespace FishEggs
                 
                 thingClass = typeof(ThingWithComps_FishEgg),
                 category = ThingCategory.Item,
+                selectable = true, // This makes the item clickable!
+                useHitPoints = true,
+                altitudeLayer = AltitudeLayer.Item,
+                drawerType = DrawerType.MapMeshOnly,
                 
                 graphicData = new GraphicData
                 {
-                    texPath = "Things/Item/FishEgg/FishEgg_Generic", // We'll need to create this texture
-                    graphicClass = typeof(Graphic_StackCount)
+                    texPath = "Things/Item/Resource/AnimalProductRaw/EggRound", // Use vanilla egg texture
+                    graphicClass = typeof(Graphic_StackCount),
+                    color = GenerateConsistentEggColor(fishDef.defName) // Pseudo-random but consistent color based on fish name
                 },
                 
                 statBases = new List<StatModifier>
@@ -156,6 +161,26 @@ namespace FishEggs
             }
             
             return hash;
+        }
+        
+        private static UnityEngine.Color GenerateConsistentEggColor(string fishDefName)
+        {
+            // Use the fish defName to generate a consistent hash
+            var hash = fishDefName.GetHashCode();
+            
+            // Use different parts of the hash for different color components
+            var random1 = (uint)(hash & 0xFFFF);
+            var random2 = (uint)((hash >> 8) & 0xFFFF);
+            var random3 = (uint)((hash >> 16) & 0xFFFF);
+            
+            // Generate color components in ranges that look good for eggs
+            // Keep them in egg-like color ranges (pastels, earth tones)
+            var hue = (random1 % 360) / 360f;
+            var saturation = 0.3f + ((random2 % 100) / 100f) * 0.4f; // 0.3 to 0.7
+            var brightness = 0.7f + ((random3 % 100) / 100f) * 0.25f; // 0.7 to 0.95
+            
+            // Convert HSV to RGB for more natural color distribution
+            return UnityEngine.Color.HSVToRGB(hue, saturation, brightness);
         }
     }
 }

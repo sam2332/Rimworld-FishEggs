@@ -5,7 +5,7 @@
     <defName>FishEggs</defName>
     <label>fish eggs</label>
     <parent>Items</parent>
-    <iconPath>Things/Item/FishEgg/FishEgg_Generic</iconPath>
+    <iconPath>Things/Item/Resource/AnimalProductRaw/EggRound</iconPath>
     <resourceReadoutRoot>true</resourceReadoutRoot>
   </ThingCategoryDef>
 </Defs>
