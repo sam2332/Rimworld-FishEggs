@@ -29,6 +29,7 @@ namespace FishEggs
                         (LocalTargetInfo target) =>
                         {
                             var job = JobMaker.MakeJob(FishEggsDefOf.SeedWaterSource, this, target);
+                            job.count = 1; // Set count to 1 since we use exactly 1 fish egg
                             selPawn.jobs.TryTakeOrderedJob(job);
                         },
                         selPawn

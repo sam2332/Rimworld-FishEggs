@@ -44,6 +44,11 @@ Ever looked at a perfectly good pond and thought, "This needs more fish"? Well, 
 
 ## Recent Fixes
 
+### v1.0.2 - Job Count Fix
+- **Fixed:** "Invalid count: -1" error when seeding water sources
+- **Issue:** Job creation was not setting the count parameter, causing hauling errors
+- **Resolution:** Set job.count = 1 when creating SeedWaterSource jobs
+
 ### v1.0.1 - XML Format Fix
 - **Fixed:** TraderKinds XML parsing error with IntRange format  
 - **Issue:** Range values were using hyphens (`3-8`) instead of tildes (`3~8`)  

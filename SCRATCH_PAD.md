@@ -86,3 +86,17 @@
 - BiomeDef (fish type definitions)
 - ThingWithComps (base for fish eggs)
 - CompUseEffect (use effect base class)
+
+## Critical Bug Fixes Applied:
+
+### 1. XML IntRange Format Issue
+- **Problem:** TraderKinds_FishEggs.xml used hyphens (`3-8`) in IntRange values
+- **Solution:** Changed to tildes (`3~8`) - RimWorld's XML parser requires tildes for ranges
+- **File:** Defs/TraderKindDefs/TraderKinds_FishEggs.xml
+
+### 2. Job Count Issue  
+- **Problem:** SeedWaterSource job had count = -1, causing hauling error in Toils_Haul.StartCarryThing
+- **Root Cause:** JobMaker.MakeJob() without specifying count defaults to 0/-1
+- **Solution:** Set job.count = 1 when creating SeedWaterSource jobs  
+- **File:** Source/ThingWithComps_FishEgg.cs
+- **Key Insight:** All RimWorld jobs that handle items MUST have a valid positive count for hauling to work
