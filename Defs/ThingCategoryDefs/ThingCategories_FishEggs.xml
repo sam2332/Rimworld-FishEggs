@@ -4,8 +4,8 @@
   <ThingCategoryDef>
     <defName>FishEggs</defName>
     <label>fish eggs</label>
-    <parent>Items</parent>
+    <parent>AnimalProductRaw</parent>
     <iconPath>Things/Item/Resource/AnimalProductRaw/EggRound</iconPath>
-    <resourceReadoutRoot>true</resourceReadoutRoot>
+    <resourceReadoutRoot>false</resourceReadoutRoot>
   </ThingCategoryDef>
 </Defs>
