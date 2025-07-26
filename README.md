@@ -13,7 +13,8 @@ Ever looked at a perfectly good pond and thought, "This needs more fish"? Well, 
 🐠 **Smart Fish Matching** - System refuses to stock incompatible fish types  
 🎣 **Full VFE Integration** - Works seamlessly with Vanilla Fishing Expanded  
 ⚙️ **Configurable Everything** - Tweak settings until it feels just right  
-🛒 **Trader Goods** - Buy fish eggs from merchants
+🛒 **Trader Goods** - Buy fish eggs from merchants  
+🔍 **Smart Validation** - Automatically detects and warns about missing fish egg definitions
 
 ## How It Works
 
@@ -22,6 +23,27 @@ Ever looked at a perfectly good pond and thought, "This needs more fish"? Well, 
 3. Click on any water tile with the fancy targeting cursor
 4. Congratulations, you're now a fish farmer!
 5. Cast your fishing rod and enjoy your artificially enhanced ecosystem
+
+## Fish Egg Types
+
+### Vanilla Fish Eggs
+- **Salmon Egg** (Freshwater) - The classic
+- **Bass Egg** (Freshwater) - Popular with anglers  
+- **Tilapia Egg** (Freshwater) - Hardy and reliable
+- **Cod Egg** (Saltwater) - Deep sea favorite
+- **Bluefish Egg** (Saltwater) - Aggressive predator
+- **Catfish Egg** (Freshwater) - Bottom feeder
+- **Piranha Egg** (Freshwater) - For the adventurous
+- **Tuna Egg** (Saltwater) - Big game fishing
+- **And many more!**
+
+### VCE Fishing Eggs
+- **Anchovy Egg** (Saltwater) - Small but mighty
+- **Angelfish Egg** (Saltwater) - Beautiful swimmers
+- **Koi Egg** (Freshwater) - Ornamental favorite
+- **Lobster Egg** (Saltwater) - Technically not fish, but tasty
+- **Swordfish Egg** (Saltwater) - Apex predator
+- **And dozens more!**
 
 ## Requirements
 
@@ -40,9 +62,27 @@ Ever looked at a perfectly good pond and thought, "This needs more fish"? Well, 
 ✅ Safe to add to existing saves  
 ✅ Works with most water-related mods  
 ✅ VFE integration tested extensively  
+✅ Static definitions ensure reliable save compatibility  
 🤔 May cause spontaneous aquaculture addiction  
 
-## Recent Fixes
+## For Modders
+
+This mod uses **static ThingDef definitions** for all fish eggs, ensuring maximum compatibility and reliability. If you're adding new fish types, the mod will automatically detect missing egg definitions and warn you in the logs.
+
+### Adding New Fish Eggs
+1. Create a new ThingDef with defName format: `FishEgg_{YourFishDefName}`
+2. Set the thingClass to `FishEggs.ThingWithComps_FishEgg`
+3. Add appropriate modExtension with fish reference and water type
+4. The validation system will automatically detect and validate your addition
+
+## Recent Updates
+
+### v2.0.0 - Static Definitions Overhaul
+- **Major Change:** Switched from dynamic generation to static ThingDef definitions
+- **Benefit:** Improved save game compatibility and UI reliability
+- **Added:** Validation system that warns about missing fish egg definitions
+- **Fixed:** Stockpile categorization issues that prevented proper UI display
+- **Performance:** Eliminated runtime generation overhead
 
 ### v1.0.2 - Job Count Fix
 - **Fixed:** "Invalid count: -1" error when seeding water sources

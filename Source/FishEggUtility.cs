@@ -29,6 +29,12 @@ namespace FishEggs
                 {
                     if (thingDef.thingCategories?.Contains(ThingCategoryDefOf.Fish) == true)
                     {
+                        // Exclude processed food items that can't reproduce
+                        if (IsProcessedFood(thingDef))
+                        {
+                            continue;
+                        }
+                        
                         cachedFishDefs.Add(thingDef);
                     }
                 }
@@ -37,6 +43,46 @@ namespace FishEggs
             }
             
             return cachedFishDefs;
+        }
+        
+        /// <summary>
+        /// Check if a fish ThingDef is actually a processed food item that can't reproduce
+        /// </summary>
+        private static bool IsProcessedFood(ThingDef fishDef)
+        {
+            // Check for common processed food indicators
+            var defName = fishDef.defName.ToLower();
+            var label = fishDef.label?.ToLower() ?? "";
+            
+            // Exclude canned, cooked, or processed foods
+            if (defName.Contains("canned") || label.Contains("canned") ||
+                defName.Contains("cooked") || label.Contains("cooked") ||
+                defName.Contains("surimi") || label.Contains("surimi") ||
+                defName.Contains("dried") || label.Contains("dried") ||
+                defName.Contains("smoked") || label.Contains("smoked") ||
+                defName.Contains("salted") || label.Contains("salted"))
+            {
+                return true;
+            }
+            
+            // Check if it has cooking recipes (indicating it's meant for consumption)
+            if (fishDef.ingestible != null && fishDef.ingestible.preferability == FoodPreferability.RawTasty)
+            {
+                // This might be a raw fish, allow it
+                return false;
+            }
+            
+            // Check if it's already cooked food
+            if (fishDef.ingestible != null && 
+                (fishDef.ingestible.preferability == FoodPreferability.MealFine ||
+                 fishDef.ingestible.preferability == FoodPreferability.MealAwful ||
+                 fishDef.ingestible.preferability == FoodPreferability.MealSimple ||
+                 fishDef.ingestible.preferability == FoodPreferability.MealLavish))
+            {
+                return true;
+            }
+            
+            return false;
         }
         
         /// <summary>

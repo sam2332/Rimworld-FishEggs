@@ -1,5 +1,79 @@
 # FishEggs Development Scratch Pad
 
+## Latest Fixes Applied:
+
+### 10. Missing VCE Fish Egg Definitions ✅ FIXED
+- **Problem:** 19 VanillaCookingExpanded fish types missing fish egg definitions, causing validation warnings
+- **Root Causes:** 
+  1. Missing ThingDef entries for additional VCE fish types
+  2. Fish detection logic incorrectly including processed foods (canned fish, surimi) that can't reproduce
+- **Solution Applied:**
+  1. **Added 17 missing fish egg definitions** to `FishEggs_VCE.xml`:
+     - Saltwater: Haddock, Halibut, Herring, Lobster, Mackerel, Pufferfish, Sprat, Swordfish, ButterFish, FlyingFish, ShortfinMakoShark
+     - Freshwater: Minnow, Perch, Trout, Crayfish, FreshwaterStingray, Arapaima
+  2. **Enhanced fish detection logic** in `FishEggUtility.cs` with `IsProcessedFood()` method to exclude:
+     - Processed foods (canned, cooked, surimi, dried, smoked, salted)
+     - Already prepared meals (FoodPreferability checks)
+  3. **Water type assignment** based on real-world fish biology
+- **Files Modified:** 
+  - `Defs/ThingDefs/FishEggs_VCE.xml` (added 17 new fish egg definitions)
+  - `Source/FishEggUtility.cs` (improved fish detection filtering)
+- **Expected Result:** Should reduce missing fish eggs from 19 to 2 (only VCE_CannedFish and VCE_HumanSurimi, which are correctly excluded as processed foods)
+- **Key Insight:** Live fish vs processed food distinction is critical for fish egg generation
+
+### 9. CompRottable TickerType XML Formatting Issue ✅ FIXED
+- **Problem:** Error "CompRottable needs tickerType Rare or Normal, has Never" for FishEgg_Fish_Tuna and other fish eggs
+- **Root Cause:** XML formatting corruption caused by malformed `tickerType` entries:
+  ```xml
+  <drawerType>MapMeshOnly</drawerType>`n    <tickerType>Rare</tickerType>
+  ```
+  The literal `\n` characters were appearing in XML instead of actual newlines
+- **Solution:** Fixed all malformed `tickerType` entries in FishEggs_Vanilla.xml using PowerShell:
+  ```powershell
+  (Get-Content file) -replace '<drawerType>MapMeshOnly</drawerType>`n    <tickerType>Rare</tickerType>', 
+    '<drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>' | Set-Content file
+  ```
+- **Verification:** Build succeeded - all fish eggs now have proper `tickerType>Rare</tickerType>` for CompRottable
+- **Files:** `Defs/ThingDefs/FishEggs_Vanilla.xml`
+- **Key Insight:** XML literal character sequences need to be replaced with actual whitespace/newlines
+
+### 8. Vanilla Trader DefName Updates for RimWorld 1.6 ✅ FIXED
+- **Problem:** Vanilla trader patches failing because trader defNames changed in RimWorld 1.6
+  - `BulkGoods` → `Orbital_BulkGoods` and `Caravan_Outlander_BulkGoods`
+  - `ExoticGoods` → `Orbital_Exotic`
+  - `Orbital_ExoticGoodsTrader` → doesn't exist anymore
+- **Root Cause:** Hardcoded old trader defNames from earlier RimWorld versions
+- **Solution:** Updated trader patch XPaths to match current RimWorld 1.6 trader definitions:
+  ```xml
+  <xpath>/Defs/TraderKindDef[defName="Orbital_BulkGoods"]/stockGenerators</xpath>
+  <xpath>/Defs/TraderKindDef[defName="Caravan_Outlander_BulkGoods"]/stockGenerators</xpath>
+  <xpath>/Defs/TraderKindDef[defName="Orbital_Exotic"]/stockGenerators</xpath>
+  ```
+- **Files:** `Patches/FishEggs_Vanilla_Traders.xml`
+- **Key Insight:** Always verify trader defNames against current game XML files when updating for new RimWorld versions
+
+### 7. PatchOperationFindMod XML Structure Error ✅ FIXED
+- **Problem:** `Exception parsing <match>true</match> to type Verse.PatchOperation` and `XML error: doesn't correspond to any field in type Success`
+- **Root Cause:** Incorrect XML structure in `FishEggs_VET_Traders.xml`
+  1. Used `<match>true</match>` instead of `<match Class="PatchOperationSequence">`
+  2. Used `<success>` element (doesn't exist in PatchOperationFindMod)
+  3. Put multiple `<li>` elements directly in wrong parent
+- **Solution:** Fixed XML structure following RimWorld's pattern:
+  ```xml
+  <Operation Class="PatchOperationFindMod">
+    <mods><li>VanillaExpanded.VanillaTraders</li></mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">...</li>
+        <li Class="PatchOperationAdd">...</li>
+      </operations>
+    </match>
+  </Operation>
+  ```
+- **Files:** `Patches/FishEggs_VET_Traders.xml`
+- **Key Insight:** PatchOperationFindMod expects `match` and `nomatch` to be single PatchOperation objects, not lists or boolean values
+
 ## Fish Discovery Summary
 
 ### Vanilla + Odyssey Fish Types (Found via Game XML):
