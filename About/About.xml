@@ -44,8 +44,10 @@ Features:
     <li>ludeon.rimWorld</li>
     <li>ludeon.rimworld.odyssey</li>
     <li>vanillaexpanded.vcef</li>
-    <li>vanillaexpanded.vcefaddon</li>    
+    <li>vanillaexpanded.vcefaddon</li>
+    <li>VanillaExpanded.VanillaTraders</li>
   </forceLoadAfter>
+
   <modDependencies>
       <li>
           <packageId>ludeon.rimworld</packageId>
@@ -56,7 +58,11 @@ Features:
           <displayName>Odyssey</displayName>
       </li>
       
+  <li>
+    <packageId>VanillaExpanded.VanillaTraders</packageId>
+    <displayName>Vanilla Expanded Traders</displayName>
+  </li>
   </modDependencies>
-  <modVersion>0.1.0</modVersion>
+  <modVersion>0.1.1</modVersion>
   
 </ModMetaData>

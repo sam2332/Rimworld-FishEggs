@@ -6,6 +6,6 @@
     <label>Fish Eggs</label>
     <parent>AnimalProductRaw</parent>
     <iconPath>Things/Item/FishEgg/FishEgg_Generic</iconPath>
-    <resourceReadoutRoot>false</resourceReadoutRoot>
+    <resourceReadoutRoot>true</resourceReadoutRoot>
   </ThingCategoryDef>
 </Defs>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Bulk Goods Trader -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/TraderKindDef[defName="BulkGoods"]/stockGenerators</xpath>
+    <value>
+      <li Class="StockGenerator_Category">
+        <categoryDef>FishEggs</categoryDef>
+        <thingDefCountRange>3~8</thingDefCountRange>
+        <countRange>5~15</countRange>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Exotic Goods Trader -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/TraderKindDef[defName="ExoticGoods"]/stockGenerators</xpath>
+    <value>
+      <li Class="StockGenerator_Category">
+        <categoryDef>FishEggs</categoryDef>
+        <thingDefCountRange>1~4</thingDefCountRange>
+        <countRange>3~10</countRange>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Orbital Exotic Goods Trader -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/TraderKindDef[defName="Orbital_ExoticGoodsTrader"]/stockGenerators</xpath>
+    <value>
+      <li Class="StockGenerator_Category">
+        <categoryDef>FishEggs</categoryDef>
+        <thingDefCountRange>1~3</thingDefCountRange>
+        <countRange>2~8</countRange>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

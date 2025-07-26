@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>VanillaExpanded.VanillaTraders</li>
+    </mods>
+    <match>true</match>
+    <success>
+
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/TraderKindDef[defName="Trader_Fisherman"]/stockGenerators</xpath>
+        <value>
+          <li Class="StockGenerator_Category">
+            <categoryDef>FishEggs</categoryDef>
+            <thingDefCountRange>2~6</thingDefCountRange>
+            <countRange>4~12</countRange>
+          </li>
+        </value>
+      </li>
+
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/TraderKindDef[defName="Trader_Wildlife"]/stockGenerators</xpath>
+        <value>
+          <li Class="StockGenerator_Category">
+            <categoryDef>FishEggs</categoryDef>
+            <thingDefCountRange>1~3</thingDefCountRange>
+            <countRange>3~10</countRange>
+          </li>
+        </value>
+      </li>
+
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/TraderKindDef[defName="Trader_NatureSupplies"]/stockGenerators</xpath>
+        <value>
+          <li Class="StockGenerator_Category">
+            <categoryDef>FishEggs</categoryDef>
+            <thingDefCountRange>1~3</thingDefCountRange>
+            <countRange>3~8</countRange>
+          </li>
+        </value>
+      </li>
+
+    </success>
+  </Operation>
+
+</Patch>
