@@ -2,6 +2,23 @@
 
 ## Latest Fixes Applied:
 
+### 9. CompRottable TickerType XML Formatting Issue ✅ FIXED
+- **Problem:** Error "CompRottable needs tickerType Rare or Normal, has Never" for FishEgg_Fish_Tuna and other fish eggs
+- **Root Cause:** XML formatting corruption caused by malformed `tickerType` entries:
+  ```xml
+  <drawerType>MapMeshOnly</drawerType>`n    <tickerType>Rare</tickerType>
+  ```
+  The literal `\n` characters were appearing in XML instead of actual newlines
+- **Solution:** Fixed all malformed `tickerType` entries in FishEggs_Vanilla.xml using PowerShell:
+  ```powershell
+  (Get-Content file) -replace '<drawerType>MapMeshOnly</drawerType>`n    <tickerType>Rare</tickerType>', 
+    '<drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>' | Set-Content file
+  ```
+- **Verification:** Build succeeded - all fish eggs now have proper `tickerType>Rare</tickerType>` for CompRottable
+- **Files:** `Defs/ThingDefs/FishEggs_Vanilla.xml`
+- **Key Insight:** XML literal character sequences need to be replaced with actual whitespace/newlines
+
 ### 8. Vanilla Trader DefName Updates for RimWorld 1.6 ✅ FIXED
 - **Problem:** Vanilla trader patches failing because trader defNames changed in RimWorld 1.6
   - `BulkGoods` → `Orbital_BulkGoods` and `Caravan_Outlander_BulkGoods`
