@@ -27,7 +27,6 @@ namespace FishEggs
                 if (eggDef != null)
                 {
                     foundEggs++;
-                    Log.Message($"[FishEggs] ✓ Found egg for {fishDef.defName}: {eggDef.defName}");
                 }
                 else
                 {
@@ -71,11 +70,7 @@ namespace FishEggs
                 .Where(def => def.thingCategories?.Contains(fishEggsCategory) == true)
                 .ToList();
                 
-            Log.Message($"[FishEggs] Found {eggDefsInCategory.Count} items in FishEggs category:");
-            foreach (var eggDef in eggDefsInCategory)
-            {
-                Log.Message($"[FishEggs] - {eggDef.defName}: {eggDef.label}");
-            }
+         
         }
     }
 }
