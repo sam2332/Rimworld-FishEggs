@@ -8,12 +8,20 @@ namespace FishEggs
     /// <summary>
     /// Generates fish egg ThingDefs dynamically for all discovered fish
     /// </summary>
-    [StaticConstructorOnStartup]
     public static class FishEggDefGenerator
     {
         private static HashSet<ushort> usedShortHashes = new HashSet<ushort>();
-        
-        static FishEggDefGenerator()
+        private static List<string> fishEggPartialsToSkip = new List<string>
+        {
+            "raw",
+            "canned",
+            "fish",
+            "egg",
+        };
+        /// <summary>
+        /// Public method to generate fish egg definitions. Called after all defs are loaded.
+        /// </summary>
+        public static void Generate()
         {
             // Delay generation to ensure all other mods have loaded their definitions
             LongEventHandler.QueueLongEvent(GenerateFishEggDefs, "Generating fish egg definitions...", false, null);
@@ -30,10 +38,13 @@ namespace FishEggs
             foreach (var fishDef in fishDefs)
             {
                 var eggDef = CreateFishEggDef(fishDef);
-                if (eggDef != null)
+                if (eggDef != null && !fishEggPartialsToSkip.Any(partial => eggDef.defName.Contains(partial)))
                 {
                     DefDatabase<ThingDef>.Add(eggDef);
                     generatedCount++;
+                }else
+                {
+                    Log.Warning($"[FishEggs] Skipped generating egg for {fishDef.defName} due to partial match or null definition");
                 }
             }
             
@@ -129,16 +140,17 @@ namespace FishEggs
             eggDef.shortHash = GenerateUniqueShortHash(eggDef.defName);
             
             // Set category after creation using a safe method
-            var animalProductCategory = DefDatabase<ThingCategoryDef>.GetNamedSilentFail("AnimalProductRaw");
+            var fishEggsCategory = DefDatabase<ThingCategoryDef>.GetNamedSilentFail("FishEggs");
 
-            if (animalProductCategory != null)
+            // Add to our custom FishEggs category (which is under Fish)
+            if (fishEggsCategory != null)
             {
-                // Always add AnimalProductRaw as well, so eggs are storable anywhere animal products are accepted
-                eggDef.thingCategories.Add(animalProductCategory);
+                eggDef.thingCategories.Add(fishEggsCategory);
+                Log.Message($"[FishEggs] Added {eggDef.defName} to FishEggs category");
             }
-            if (animalProductCategory == null)
+            else
             {
-                Log.Error($"[FishEggs] AnimalProductRaw category not found for {eggDef.defName}, item may not appear in categories");
+                Log.Error($"[FishEggs] FishEggs category not found for {eggDef.defName}, eggs won't appear in categories");
             }
             
             return eggDef;

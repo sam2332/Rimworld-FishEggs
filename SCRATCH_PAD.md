@@ -1,5 +1,43 @@
 # FishEggs Development Scratch Pad
 
+## Latest Fixes Applied:
+
+### 8. Vanilla Trader DefName Updates for RimWorld 1.6 ✅ FIXED
+- **Problem:** Vanilla trader patches failing because trader defNames changed in RimWorld 1.6
+  - `BulkGoods` → `Orbital_BulkGoods` and `Caravan_Outlander_BulkGoods`
+  - `ExoticGoods` → `Orbital_Exotic`
+  - `Orbital_ExoticGoodsTrader` → doesn't exist anymore
+- **Root Cause:** Hardcoded old trader defNames from earlier RimWorld versions
+- **Solution:** Updated trader patch XPaths to match current RimWorld 1.6 trader definitions:
+  ```xml
+  <xpath>/Defs/TraderKindDef[defName="Orbital_BulkGoods"]/stockGenerators</xpath>
+  <xpath>/Defs/TraderKindDef[defName="Caravan_Outlander_BulkGoods"]/stockGenerators</xpath>
+  <xpath>/Defs/TraderKindDef[defName="Orbital_Exotic"]/stockGenerators</xpath>
+  ```
+- **Files:** `Patches/FishEggs_Vanilla_Traders.xml`
+- **Key Insight:** Always verify trader defNames against current game XML files when updating for new RimWorld versions
+
+### 7. PatchOperationFindMod XML Structure Error ✅ FIXED
+- **Problem:** `Exception parsing <match>true</match> to type Verse.PatchOperation` and `XML error: doesn't correspond to any field in type Success`
+- **Root Cause:** Incorrect XML structure in `FishEggs_VET_Traders.xml`
+  1. Used `<match>true</match>` instead of `<match Class="PatchOperationSequence">`
+  2. Used `<success>` element (doesn't exist in PatchOperationFindMod)
+  3. Put multiple `<li>` elements directly in wrong parent
+- **Solution:** Fixed XML structure following RimWorld's pattern:
+  ```xml
+  <Operation Class="PatchOperationFindMod">
+    <mods><li>VanillaExpanded.VanillaTraders</li></mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">...</li>
+        <li Class="PatchOperationAdd">...</li>
+      </operations>
+    </match>
+  </Operation>
+  ```
+- **Files:** `Patches/FishEggs_VET_Traders.xml`
+- **Key Insight:** PatchOperationFindMod expects `match` and `nomatch` to be single PatchOperation objects, not lists or boolean values
+
 ## Fish Discovery Summary
 
 ### Vanilla + Odyssey Fish Types (Found via Game XML):
