@@ -9,7 +9,7 @@ namespace FishEggs
     /// </summary>
     public class ThingWithComps_FishEgg : ThingWithComps
     {
-        public ThingDef LinkedFishDef => def.GetModExtension<FishEggProperties>()?.linkedFishDef;
+        public ThingDef LinkedFishDef => DefDatabase<ThingDef>.GetNamedSilentFail(def.GetModExtension<FishEggProperties>()?.linkedFishDefName);
         public WaterType RequiredWaterType => def.GetModExtension<FishEggProperties>()?.requiredWaterType ?? WaterType.FreshWater;
         
         public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn selPawn)
@@ -44,7 +44,7 @@ namespace FishEggs
     /// </summary>
     public class FishEggProperties : DefModExtension
     {
-        public ThingDef linkedFishDef;
+        public string linkedFishDefName;
         public WaterType requiredWaterType;
     }
 }

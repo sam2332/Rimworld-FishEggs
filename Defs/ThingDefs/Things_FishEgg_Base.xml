@@ -52,6 +52,7 @@
     <modExtensions>
       <li Class="FishEggs.FishEggProperties">
         <!-- No linked fish - this is just for compatibility -->
+        <linkedFishDefName></linkedFishDefName>
         <requiredWaterType>FreshWater</requiredWaterType>
       </li>
     </modExtensions>

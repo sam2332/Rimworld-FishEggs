@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Vanilla Fish Eggs -->
+  
+  <ThingDef>
+    <defName>FishEgg_Fish_Salmon</defName>
+    <label>salmon egg</label>
+    <description>An egg containing salmon spawn. Can be used to seed freshwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(1.0, 0.8, 0.6)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>12</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>Fish_Salmon</linkedFishDefName>
+        <requiredWaterType>FreshWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_Fish_Bass</defName>
+    <label>bass egg</label>
+    <description>An egg containing bass spawn. Can be used to seed freshwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.8, 0.9, 0.7)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>10</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>Fish_Bass</linkedFishDefName>
+        <requiredWaterType>FreshWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_Fish_Tilapia</defName>
+    <label>tilapia egg</label>
+    <description>An egg containing tilapia spawn. Can be used to seed freshwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.9, 0.8, 0.9)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>8</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>Fish_Tilapia</linkedFishDefName>
+        <requiredWaterType>FreshWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_Fish_Cod</defName>
+    <label>cod egg</label>
+    <description>An egg containing cod spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.7, 0.8, 1.0)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>15</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>Fish_Cod</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_Fish_Bluefish</defName>
+    <label>bluefish egg</label>
+    <description>An egg containing bluefish spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.6, 0.7, 1.0)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>14</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>Fish_Bluefish</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_Fish_Guppy</defName>
+    <label>guppy egg</label>
+    <description>An egg containing guppy spawn. Can be used to seed freshwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(1.0, 0.9, 0.6)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>5</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>Fish_Guppy</linkedFishDefName>
+        <requiredWaterType>FreshWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_Fish_Frostfish</defName>
+    <label>frostfish egg</label>
+    <description>An egg containing frostfish spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.8, 0.9, 1.0)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>18</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>Fish_Frostfish</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_Fish_Catfish</defName>
+    <label>catfish egg</label>
+    <description>An egg containing catfish spawn. Can be used to seed freshwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.7, 0.6, 0.5)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>11</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>Fish_Catfish</linkedFishDefName>
+        <requiredWaterType>FreshWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_Fish_Piranha</defName>
+    <label>piranha egg</label>
+    <description>An egg containing piranha spawn. Can be used to seed freshwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(1.0, 0.6, 0.6)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>16</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>Fish_Piranha</linkedFishDefName>
+        <requiredWaterType>FreshWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_Fish_Dogfish</defName>
+    <label>dogfish egg</label>
+    <description>An egg containing dogfish spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.6, 0.6, 0.8)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>13</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>Fish_Dogfish</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_Fish_Marlin</defName>
+    <label>marlin egg</label>
+    <description>An egg containing marlin spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.5, 0.7, 0.9)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>22</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>Fish_Marlin</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_Fish_Tuna</defName>
+    <label>tuna egg</label>
+    <description>An egg containing tuna spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.8, 0.6, 0.9)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>20</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>Fish_Tuna</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_Fish_Flounder</defName>
+    <label>flounder egg</label>
+    <description>An egg containing flounder spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.9, 0.9, 0.7)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>9</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>Fish_Flounder</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_Fish_Toxfish</defName>
+    <label>toxfish egg</label>
+    <description>An egg containing toxfish spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.7, 1.0, 0.6)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>25</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>Fish_Toxfish</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+</Defs>
