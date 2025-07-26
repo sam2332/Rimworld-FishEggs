@@ -1,6 +1,3 @@
----
-applyTo: '**'
----
 # Coding Standards and Domain Knowledge Guidelines
 Do not use single use functions, build classes that are reasonably sized and have a single responsibility.
 Use meaningful names for classes, methods, and variables that reflect their purpose.

@@ -42,15 +42,26 @@ namespace FishEggs
                         }
                     }
 
-                    // Increase population field using reflection
-                    var populationField = typeof(WaterBody).GetField("population", BindingFlags.NonPublic | BindingFlags.Instance);
-                    if (populationField != null)
+                    // Instead of modifying current population, we need to increase the maximum capacity
+                    // We'll do this by artificially increasing the water body size which affects PopulationFactor
+                    var cellCountField = typeof(WaterBody).GetField("cellCount", BindingFlags.NonPublic | BindingFlags.Instance);
+                    if (cellCountField != null)
                     {
-                        float currentPop = (float)populationField.GetValue(waterBody);
-                        // Increase by a fixed amount per stocking (tune as needed)
-                        float addAmount = 50f;
-                        populationField.SetValue(waterBody, currentPop + addAmount);
-                        Log.Message($"[FishEggs] Increased fish population by {addAmount} at {cell} (now {currentPop + addAmount})");
+                        int currentCellCount = (int)cellCountField.GetValue(waterBody);
+                        // Add equivalent of extra cells to increase carrying capacity
+                        // Each "virtual cell" adds carrying capacity based on the population factor curve
+                        int bonusCells = 100; // This increases population capacity significantly
+                        cellCountField.SetValue(waterBody, currentCellCount + bonusCells);
+                        
+                        // Force recalculation of cached population factor
+                        var cachedPopulationFactorField = typeof(WaterBody).GetField("cachedPopulationFactor", BindingFlags.NonPublic | BindingFlags.Instance);
+                        if (cachedPopulationFactorField != null)
+                        {
+                            cachedPopulationFactorField.SetValue(waterBody, -1f); // Force recalculation
+                        }
+                        
+                        Log.Message($"[FishEggs] Increased water body capacity by adding {bonusCells} virtual cells at {cell} (cellCount: {currentCellCount} -> {currentCellCount + bonusCells})");
+                        Log.Message($"[FishEggs] New max population: {waterBody.MaxPopulation}");
                     }
                 }
                 catch (System.Exception ex)

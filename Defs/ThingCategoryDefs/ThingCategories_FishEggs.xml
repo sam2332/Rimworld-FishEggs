@@ -4,7 +4,7 @@
   <ThingCategoryDef>
     <defName>FishEggs</defName>
     <label>Fish Eggs</label>
-    <parent>AnimalProductRaw</parent>
+    <parent>Fish</parent>
     <iconPath>Things/Item/FishEgg/FishEgg_Generic</iconPath>
     <resourceReadoutRoot>true</resourceReadoutRoot>
   </ThingCategoryDef>
