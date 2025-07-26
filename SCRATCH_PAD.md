@@ -136,15 +136,32 @@
 - **Likely Issue:** Fish discovery or generation timing problem
 - **Files Checked:** VFE 1.6Odyssey definitions confirmed halibut exists
 
-### 6. Sound References Fix
-- **Problem:** `Tried to PlayOneShot with null SoundDef` errors during hauling/carry operations
-- **Root Cause:** FishEggDefGenerator was setting invalid sound properties:
-  - `soundImpactDefault = SoundDefOf.Standard_Impact` (doesn't exist)
-  - `soundPlayInstrument = SoundDefOf.Standard_PlayInstrument` (doesn't exist)  
-  - `soundSpawned = SoundDefOf.Standard_Spawned` (doesn't exist)
-  - `soundInteract = SoundDefOf.Standard_Interact` (doesn't exist)
-- **Solution:** Removed all invalid sound references, kept only valid ones:
-  - `soundDrop = SoundDefOf.Standard_Drop` ✅ (confirmed exists)
-  - Removed the rest to prevent null sound errors
-- **Files:** Source/FishEggDefGenerator.cs
-- **Key Insight:** Always verify SoundDef exists in SoundDefOf before assigning, null sounds cause crashes during game operations
+### 6. VanillaTradingExpanded FishEgg_Base Reference Issue ✅ SOLVED
+- **Problem:** `Could not load reference to Verse.ThingDef named FishEgg_Base` errors during game initialization
+- **Root Cause Investigation:** 
+  1. **Initial Hypothesis**: Hardcoded reference in VTE mod ❌
+  2. **Correct Cause**: VTE's `TradingManager` GameComponent saves price history data to world save files
+  3. **Storage Location**: `priceHistoryRecorders` dictionary in save files contains `FishEgg_Base` key from old mod versions
+  4. **Persistence**: VTE loads this data during initialization, before any save game is loaded
+- **Evidence Found**: Multiple save files contain VTE price history with `FishEgg_Base` references:
+  ```xml
+  <li>FishEgg_Base</li>  <!-- in keys section -->
+  <thingDef>FishEgg_Base</thingDef>  <!-- in values section -->
+  ```
+- **Solution Applied**: Fixed existing `Things_FishEgg_Base.xml` definition that had XML syntax errors
+- **Additional Issues Found & Fixed**: 
+  1. **XML Definition Syntax Errors** in `Things_FishEgg_Base.xml`:
+     - `<category>ThingCategory.Item</category>` → `<category>Item</category>` ✅
+     - `<altitudeLayer>AltitudeLayer.Item</altitudeLayer>` → `<altitudeLayer>Item</altitudeLayer>` ✅
+     - `<drawerType>DrawerType.MapMeshOnly</drawerType>` → `<drawerType>MapMeshOnly</drawerType>` ✅
+     - Missing `<tickerType>Rare</tickerType>` for CompRottable ✅
+  2. **Duplicate Definition Error**: `Mod FishEggs.ProgrammerLily.com has multiple Verse.BuildableDefs named FishEgg_Base`
+     - **Cause**: Both `Things_FishEgg_Base.xml` and `FishEgg_Base_Legacy.xml` contained `defName>FishEgg_Base</defName>`
+     - **Fix**: Disabled `FishEgg_Base_Legacy.xml` by removing all definitions ✅
+- **Files:** 
+  - Investigation: `find_vte_cache.py` script
+  - Fix: `Defs/ThingDefs/Things_FishEgg_Base.xml`
+  - Disabled: `Defs/ThingDefs/FishEgg_Base_Legacy.xml`
+- **Key Insights**: 
+  1. RimWorld XML definitions don't use fully qualified enum names - use simple values like `Item`, not `ThingCategory.Item`
+  2. RimWorld requires unique `defName` values across all definitions - duplicates are skipped and cause errors

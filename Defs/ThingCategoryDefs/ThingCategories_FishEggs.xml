@@ -3,9 +3,9 @@
   <!-- Fish Egg category for organization -->
   <ThingCategoryDef>
     <defName>FishEggs</defName>
-    <label>fish eggs</label>
+    <label>Fish Eggs</label>
     <parent>AnimalProductRaw</parent>
-    <iconPath>Things/Item/Resource/AnimalProductRaw/EggRound</iconPath>
+    <iconPath>Things/Item/FishEgg/FishEgg_Generic</iconPath>
     <resourceReadoutRoot>false</resourceReadoutRoot>
   </ThingCategoryDef>
 </Defs>

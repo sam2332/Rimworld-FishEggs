@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Base fish egg definition for compatibility with trading mods -->
+  <ThingDef>
+    <defName>FishEgg_Base</defName>
+    <label>fish egg</label>
+    <description>A generic fish egg that can be used to seed water sources. This is a compatibility definition for trading systems.</description>
+    
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.8, 0.8, 0.6)</color>
+    </graphicData>
+    
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>10</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    
+    <thingCategories>
+      <li>FishEggs</li>
+      <li>AnimalProductRaw</li>
+    </thingCategories>
+    
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <!-- No linked fish - this is just for compatibility -->
+        <requiredWaterType>FreshWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+</Defs>

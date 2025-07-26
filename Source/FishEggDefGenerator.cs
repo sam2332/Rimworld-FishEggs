@@ -101,10 +101,10 @@ namespace FishEggs
                 soundPickup = SoundDefOf.Standard_Pickup,
                 soundInteract = SoundDefOf.Interact_Sow,
                 thingCategories = new List<ThingCategoryDef>(),
-                stackLimit = 10,
+                stackLimit = 100,
                 drawGUIOverlay = true,
                 alwaysHaulable = true,
-                pathCost = 14,
+                pathCost = 1,
                 
                 comps = new List<CompProperties>
                 {
@@ -129,20 +129,16 @@ namespace FishEggs
             eggDef.shortHash = GenerateUniqueShortHash(eggDef.defName);
             
             // Set category after creation using a safe method
-            var fishEggsCategory = DefDatabase<ThingCategoryDef>.GetNamedSilentFail("FishEggs");
             var animalProductCategory = DefDatabase<ThingCategoryDef>.GetNamedSilentFail("AnimalProductRaw");
-            if (fishEggsCategory != null)
-            {
-                eggDef.thingCategories.Add(fishEggsCategory);
-            }
+
             if (animalProductCategory != null)
             {
                 // Always add AnimalProductRaw as well, so eggs are storable anywhere animal products are accepted
                 eggDef.thingCategories.Add(animalProductCategory);
             }
-            if (fishEggsCategory == null && animalProductCategory == null)
+            if (animalProductCategory == null)
             {
-                Log.Error($"[FishEggs] Neither FishEggs nor AnimalProductRaw category found for {eggDef.defName}, item may not appear in categories");
+                Log.Error($"[FishEggs] AnimalProductRaw category not found for {eggDef.defName}, item may not appear in categories");
             }
             
             return eggDef;
