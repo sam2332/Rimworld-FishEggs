@@ -3,7 +3,7 @@
   <!-- Fish Egg category for organization -->
   <ThingCategoryDef>
     <defName>FishEggs</defName>
-    <label>Eggs</label>
+    <label>Fish Eggs</label>
     <parent>Fish</parent>
     <iconPath>Things/Item/FishEgg/FishEgg_Generic</iconPath>
     <resourceReadoutRoot>true</resourceReadoutRoot>
