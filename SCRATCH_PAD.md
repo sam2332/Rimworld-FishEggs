@@ -2,6 +2,25 @@
 
 ## Latest Fixes Applied:
 
+### 10. Missing VCE Fish Egg Definitions ✅ FIXED
+- **Problem:** 19 VanillaCookingExpanded fish types missing fish egg definitions, causing validation warnings
+- **Root Causes:** 
+  1. Missing ThingDef entries for additional VCE fish types
+  2. Fish detection logic incorrectly including processed foods (canned fish, surimi) that can't reproduce
+- **Solution Applied:**
+  1. **Added 17 missing fish egg definitions** to `FishEggs_VCE.xml`:
+     - Saltwater: Haddock, Halibut, Herring, Lobster, Mackerel, Pufferfish, Sprat, Swordfish, ButterFish, FlyingFish, ShortfinMakoShark
+     - Freshwater: Minnow, Perch, Trout, Crayfish, FreshwaterStingray, Arapaima
+  2. **Enhanced fish detection logic** in `FishEggUtility.cs` with `IsProcessedFood()` method to exclude:
+     - Processed foods (canned, cooked, surimi, dried, smoked, salted)
+     - Already prepared meals (FoodPreferability checks)
+  3. **Water type assignment** based on real-world fish biology
+- **Files Modified:** 
+  - `Defs/ThingDefs/FishEggs_VCE.xml` (added 17 new fish egg definitions)
+  - `Source/FishEggUtility.cs` (improved fish detection filtering)
+- **Expected Result:** Should reduce missing fish eggs from 19 to 2 (only VCE_CannedFish and VCE_HumanSurimi, which are correctly excluded as processed foods)
+- **Key Insight:** Live fish vs processed food distinction is critical for fish egg generation
+
 ### 9. CompRottable TickerType XML Formatting Issue ✅ FIXED
 - **Problem:** Error "CompRottable needs tickerType Rare or Normal, has Never" for FishEgg_Fish_Tuna and other fish eggs
 - **Root Cause:** XML formatting corruption caused by malformed `tickerType` entries:
