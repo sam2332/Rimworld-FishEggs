@@ -12,6 +12,7 @@ namespace FishEggs
     public class MapComponent_StockedTiles : MapComponent
     {
         private Dictionary<IntVec3, ThingDef> stockedTiles = new Dictionary<IntVec3, ThingDef>();
+        private Dictionary<IntVec3, int> bonusCapacityByCell = new Dictionary<IntVec3, int>();
         
         public MapComponent_StockedTiles(Map map) : base(map)
         {
@@ -51,6 +52,10 @@ namespace FishEggs
                         // Add equivalent of extra cells to increase carrying capacity
                         // Each "virtual cell" adds carrying capacity based on the population factor curve
                         int bonusCells = 100; // This increases population capacity significantly
+                        
+                        // Track the bonus capacity for this cell so we can restore it after map reload
+                        bonusCapacityByCell[cell] = bonusCells;
+                        
                         cellCountField.SetValue(waterBody, currentCellCount + bonusCells);
                         
                         // Force recalculation of cached population factor
@@ -94,6 +99,46 @@ namespace FishEggs
         public void RemoveStocking(IntVec3 cell)
         {
             stockedTiles.Remove(cell);
+            bonusCapacityByCell.Remove(cell);
+        }
+        
+        /// <summary>
+        /// Restore bonus capacity to all stocked water bodies after map load
+        /// </summary>
+        public void RestoreBonusCapacity()
+        {
+            foreach (var kvp in bonusCapacityByCell)
+            {
+                var cell = kvp.Key;
+                var bonusCells = kvp.Value;
+                
+                var waterBody = map.waterBodyTracker?.WaterBodyAt(cell);
+                if (waterBody != null)
+                {
+                    try
+                    {
+                        var cellCountField = typeof(WaterBody).GetField("cellCount", BindingFlags.NonPublic | BindingFlags.Instance);
+                        if (cellCountField != null)
+                        {
+                            int currentCellCount = (int)cellCountField.GetValue(waterBody);
+                            cellCountField.SetValue(waterBody, currentCellCount + bonusCells);
+                            
+                            // Force recalculation of cached population factor
+                            var cachedPopulationFactorField = typeof(WaterBody).GetField("cachedPopulationFactor", BindingFlags.NonPublic | BindingFlags.Instance);
+                            if (cachedPopulationFactorField != null)
+                            {
+                                cachedPopulationFactorField.SetValue(waterBody, -1f);
+                            }
+                            
+                            Log.Message($"[FishEggs] Restored {bonusCells} bonus capacity to water body at {cell} (new cellCount: {currentCellCount + bonusCells})");
+                        }
+                    }
+                    catch (System.Exception ex)
+                    {
+                        Log.Warning($"[FishEggs] Could not restore bonus capacity to water body at {cell}: {ex.Message}");
+                    }
+                }
+            }
         }
         
         /// <summary>
@@ -108,10 +153,22 @@ namespace FishEggs
         {
             base.ExposeData();
             Scribe_Collections.Look(ref stockedTiles, "stockedTiles", LookMode.Value, LookMode.Def);
+            Scribe_Collections.Look(ref bonusCapacityByCell, "bonusCapacityByCell", LookMode.Value, LookMode.Value);
             
             if (stockedTiles == null)
             {
                 stockedTiles = new Dictionary<IntVec3, ThingDef>();
+            }
+            
+            if (bonusCapacityByCell == null)
+            {
+                bonusCapacityByCell = new Dictionary<IntVec3, int>();
+            }
+            
+            // After loading, restore the bonus capacity
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                RestoreBonusCapacity();
             }
         }
     }
