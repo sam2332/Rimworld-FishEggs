@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-  <!-- Bulk Goods Trader -->
+  <!-- Orbital Bulk Goods Trader -->
   <Operation Class="PatchOperationAdd">
-    <xpath>/Defs/TraderKindDef[defName="BulkGoods"]/stockGenerators</xpath>
+    <xpath>/Defs/TraderKindDef[defName="Orbital_BulkGoods"]/stockGenerators</xpath>
     <value>
       <li Class="StockGenerator_Category">
         <categoryDef>FishEggs</categoryDef>
@@ -13,26 +13,26 @@
     </value>
   </Operation>
 
-  <!-- Exotic Goods Trader -->
+  <!-- Caravan Bulk Goods Trader -->
   <Operation Class="PatchOperationAdd">
-    <xpath>/Defs/TraderKindDef[defName="ExoticGoods"]/stockGenerators</xpath>
+    <xpath>/Defs/TraderKindDef[defName="Caravan_Outlander_BulkGoods"]/stockGenerators</xpath>
     <value>
       <li Class="StockGenerator_Category">
         <categoryDef>FishEggs</categoryDef>
-        <thingDefCountRange>1~4</thingDefCountRange>
-        <countRange>3~10</countRange>
+        <thingDefCountRange>2~6</thingDefCountRange>
+        <countRange>4~12</countRange>
       </li>
     </value>
   </Operation>
 
   <!-- Orbital Exotic Goods Trader -->
   <Operation Class="PatchOperationAdd">
-    <xpath>/Defs/TraderKindDef[defName="Orbital_ExoticGoodsTrader"]/stockGenerators</xpath>
+    <xpath>/Defs/TraderKindDef[defName="Orbital_Exotic"]/stockGenerators</xpath>
     <value>
       <li Class="StockGenerator_Category">
         <categoryDef>FishEggs</categoryDef>
-        <thingDefCountRange>1~3</thingDefCountRange>
-        <countRange>2~8</countRange>
+        <thingDefCountRange>1~4</thingDefCountRange>
+        <countRange>3~10</countRange>
       </li>
     </value>
   </Operation>

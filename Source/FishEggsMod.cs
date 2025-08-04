@@ -24,6 +24,12 @@ namespace FishEggs
             var harmony = new Harmony("FishEggs.ProgrammerLily.com");
             harmony.PatchAll();
             
+            // Validate fish eggs after all defs are loaded
+            LongEventHandler.ExecuteWhenFinished(() =>
+            {
+                FishEggValidator.ValidateFishEggs();
+            });
+            
             Log.Message("[FishEggs] Mod initialized successfully");
         }
         

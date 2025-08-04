@@ -1,0 +1,1136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- VCE Fishing Fish Eggs -->
+  
+  <ThingDef>
+    <defName>FishEgg_VCEF_RawAnchovy</defName>
+    <label>anchovy egg</label>
+    <description>An egg containing anchovy spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.8, 0.8, 0.9)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>6</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_RawAnchovy</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_VCEF_RawAngelfish</defName>
+    <label>angelfish egg</label>
+    <description>An egg containing angelfish spawn. Can be used to seed freshwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(1.0, 0.9, 0.8)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>15</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_RawAngelfish</linkedFishDefName>
+        <requiredWaterType>FreshWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_VCEF_RawAnglerfish</defName>
+    <label>anglerfish egg</label>
+    <description>An egg containing anglerfish spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.4, 0.3, 0.5)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>18</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_RawAnglerfish</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_VCEF_RawClownfish</defName>
+    <label>clownfish egg</label>
+    <description>An egg containing clownfish spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(1.0, 0.6, 0.4)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>12</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_RawClownfish</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_VCEF_RawEel</defName>
+    <label>eel egg</label>
+    <description>An egg containing eel spawn. Can be used to seed freshwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.5, 0.6, 0.4)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>14</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_RawEel</linkedFishDefName>
+        <requiredWaterType>FreshWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_VCEF_RawGoldfish</defName>
+    <label>goldfish egg</label>
+    <description>An egg containing goldfish spawn. Can be used to seed freshwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(1.0, 0.8, 0.2)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>8</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_RawGoldfish</linkedFishDefName>
+        <requiredWaterType>FreshWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_VCEF_RawKoi</defName>
+    <label>koi egg</label>
+    <description>An egg containing koi spawn. Can be used to seed freshwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.9, 0.7, 0.8)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>20</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_RawKoi</linkedFishDefName>
+        <requiredWaterType>FreshWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef>
+    <defName>FishEgg_VCEF_RawHaddock</defName>
+    <label>haddock egg</label>
+    <description>An egg containing haddock spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.8, 0.9, 0.7)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>13</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_RawHaddock</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_VCEF_RawHalibut</defName>
+    <label>halibut egg</label>
+    <description>An egg containing halibut spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.9, 0.8, 0.7)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>18</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_RawHalibut</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_VCEF_RawHerring</defName>
+    <label>herring egg</label>
+    <description>An egg containing herring spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.7, 0.8, 0.9)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>9</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_RawHerring</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_VCEF_RawLobster</defName>
+    <label>lobster egg</label>
+    <description>An egg containing lobster spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(1.0, 0.4, 0.3)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>22</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_RawLobster</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_VCEF_RawMackerel</defName>
+    <label>mackerel egg</label>
+    <description>An egg containing mackerel spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.6, 0.8, 0.7)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>11</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_RawMackerel</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_VCEF_RawMinnow</defName>
+    <label>minnow egg</label>
+    <description>An egg containing minnow spawn. Can be used to seed freshwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.9, 0.9, 0.8)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>4</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_RawMinnow</linkedFishDefName>
+        <requiredWaterType>FreshWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_VCEF_RawPerch</defName>
+    <label>perch egg</label>
+    <description>An egg containing perch spawn. Can be used to seed freshwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.7, 0.9, 0.6)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>10</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_RawPerch</linkedFishDefName>
+        <requiredWaterType>FreshWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_VCEF_RawPufferfish</defName>
+    <label>pufferfish egg</label>
+    <description>An egg containing pufferfish spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.8, 0.7, 1.0)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>25</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_RawPufferfish</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_VCEF_RawSprat</defName>
+    <label>sprat egg</label>
+    <description>An egg containing sprat spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.7, 0.7, 0.8)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>6</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_RawSprat</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_VCEF_RawSwordfish</defName>
+    <label>swordfish egg</label>
+    <description>An egg containing swordfish spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.5, 0.6, 0.9)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>28</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_RawSwordfish</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_VCEF_RawTrout</defName>
+    <label>trout egg</label>
+    <description>An egg containing trout spawn. Can be used to seed freshwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.8, 0.7, 0.6)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>14</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_RawTrout</linkedFishDefName>
+        <requiredWaterType>FreshWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- Special Fish - Note: Canned fish and surimi are processed foods, not living fish -->
+  <ThingDef>
+    <defName>FishEgg_VCEF_Crayfish</defName>
+    <label>crayfish egg</label>
+    <description>An egg containing crayfish spawn. Can be used to seed freshwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.6, 0.4, 0.3)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>16</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_Crayfish</linkedFishDefName>
+        <requiredWaterType>FreshWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_VCEF_ButterFish</defName>
+    <label>butterfish egg</label>
+    <description>An egg containing butterfish spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(1.0, 1.0, 0.7)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>17</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_ButterFish</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_VCEF_FreshwaterStingray</defName>
+    <label>freshwater stingray egg</label>
+    <description>An egg containing freshwater stingray spawn. Can be used to seed freshwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.5, 0.5, 0.6)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>30</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_FreshwaterStingray</linkedFishDefName>
+        <requiredWaterType>FreshWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_VCEF_FlyingFish</defName>
+    <label>flying fish egg</label>
+    <description>An egg containing flying fish spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.8, 0.9, 1.0)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>19</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_FlyingFish</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_VCEF_Arapaima</defName>
+    <label>arapaima egg</label>
+    <description>An egg containing arapaima spawn. Can be used to seed freshwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.7, 0.5, 0.4)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>35</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_Arapaima</linkedFishDefName>
+        <requiredWaterType>FreshWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>FishEgg_VCEF_ShortfinMakoShark</defName>
+    <label>shortfin mako shark egg</label>
+    <description>An egg containing shortfin mako shark spawn. Can be used to seed saltwater sources.</description>
+    <thingClass>FishEggs.ThingWithComps_FishEgg</thingClass>
+    <category>Item</category>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <altitudeLayer>Item</altitudeLayer>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.4, 0.5, 0.6)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <MarketValue>40</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <soundDrop>Standard_Drop</soundDrop>
+    <soundPickup>Standard_Pickup</soundPickup>
+    <soundInteract>Interact_Sow</soundInteract>
+    <thingCategories>
+      <li>FishEggs</li>
+    </thingCategories>
+    <stackLimit>100</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>1</pathCost>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>5</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="FishEggs.FishEggProperties">
+        <linkedFishDefName>VCEF_ShortfinMakoShark</linkedFishDefName>
+        <requiredWaterType>SaltWater</requiredWaterType>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- More VCE fish eggs can be added here as needed -->
+
+</Defs>

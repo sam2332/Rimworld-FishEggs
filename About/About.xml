@@ -4,7 +4,7 @@
   <packageId>FishEggs.ProgrammerLily.com</packageId>
   
   <!-- Display name of your mod -->
-  <name>[PL] Fish Eggs and Pond Stocking</name>
+  <name>Fish Eggs and Pond Stocking</name>
   
   <!-- Author information -->
   <author>ProgrammerLily</author>
@@ -15,18 +15,32 @@
 
 What Does This Do?
 
-Ever looked at a perfectly good pond and thought, "This needs more fish"? Well, now you can do something about it! This mod lets your colonists stock any water source with fish using... fish eggs!
+Ever looked at a perfectly good pond and thought, "This needs more fish"? Well, now you can do something about it! This mod lets your colonists stock any water source with fish using... fish eggs! Revolutionary, right?
 
 Features:
 
-- Right-click fish eggs, target water, stock fish
-- Works on any water tile
-- Fish type checking (no ocean salmon)
-- Supports Vanilla Fishing Expanded
-- Configurable via mod settings
-- Fish eggs appear in trader stock
+- Right-click fish eggs → "Seed Water Source" → click water → instant fish farm!
+- Works on any water tile (freshwater, saltwater, even that weird puddle)
+- Smart fish matching (system refuses incompatible fish types)
+- Full VFE integration with dozens of fish egg types
+- Buy fish eggs from traders or... creative acquisition
+- Static definitions ensure reliable save compatibility
+- Automatic validation warns about missing fish eggs
+- Eggs are under the Fish category so they should work for sushi and other recipes
 
-  ...and more!
+Fish Types Supported:
+
+Vanilla: Salmon, Bass, Tilapia, Cod, Bluefish, Catfish, Piranha, Tuna, and more!
+VCE Fishing: Anchovy, Angelfish, Koi, Lobster, Swordfish, and dozens more!
+
+Balance Notes:
+
+- Fish eggs rot after 5 days (fish don't wait forever)
+- Water type matters (salmon won't survive in salt water)
+- Colonists gain Animals XP for successful seeding
+- Integrates seamlessly with vanilla population mechanics
+
+Because sometimes the best solution to not having fish is just adding more fish!
 </description>
 
   
@@ -45,7 +59,7 @@ Features:
     <li>ludeon.rimworld.odyssey</li>
     <li>vanillaexpanded.vcef</li>
     <li>vanillaexpanded.vcefaddon</li>
-    <li>VanillaExpanded.VanillaTraders</li>
+    <li>VanillaExpanded.VanillaTradingExpanded</li>
   </forceLoadAfter>
 
   <modDependencies>
@@ -57,12 +71,14 @@ Features:
           <packageId>ludeon.rimworld.odyssey</packageId>
           <displayName>Odyssey</displayName>
       </li>
+      <li>
+          <packageId>VanillaExpanded.VCEF</packageId>
+          <displayName>Vanilla Fishing Expanded</displayName>
+          <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1914064942</steamWorkshopUrl>
+      </li>
       
-  <li>
-    <packageId>VanillaExpanded.VanillaTraders</packageId>
-    <displayName>Vanilla Expanded Traders</displayName>
-  </li>
+  
   </modDependencies>
-  <modVersion>0.1.1</modVersion>
+  <modVersion>1.3</modVersion>
   
 </ModMetaData>
