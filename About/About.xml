@@ -4,7 +4,7 @@
   <packageId>FishEggs.ProgrammerLily.com</packageId>
   
   <!-- Display name of your mod -->
-  <name>[PL] Fish Eggs and Pond Stocking</name>
+  <name>Fish Eggs and Pond Stocking</name>
   
   <!-- Author information -->
   <author>ProgrammerLily</author>
@@ -79,6 +79,6 @@ Because sometimes the best solution to not having fish is just adding more fish!
       
   
   </modDependencies>
-  <modVersion>1.2</modVersion>
+  <modVersion>1.3</modVersion>
   
 </ModMetaData>
